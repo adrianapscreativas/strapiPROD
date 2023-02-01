@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tecnologias",
+  "info": {
+    "singularName": "tecnologia",
+    "pluralName": "tecnologias",
+    "displayName": "tecnologia"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "inventarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario.inventario",
+      "mappedBy": "tecnologias"
+    },
+    "inventario_cutters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario-cutter.inventario-cutter",
+      "mappedBy": "tecnologias"
+    },
+    "inventario_cutter_selves": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario-cutter-self.inventario-cutter-self",
+      "mappedBy": "tecnologias"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventarios",
+  "info": {
+    "singularName": "inventario",
+    "pluralName": "inventarios",
+    "displayName": "inventario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cantidad": {
+      "type": "string",
+      "required": true
+    },
+    "herramientas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::herramienta.herramienta",
+      "inversedBy": "inventarios"
+    },
+    "tecnologias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tecnologia.tecnologia",
+      "inversedBy": "inventarios"
+    },
+    "tubos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tubo.tubo",
+      "inversedBy": "inventarios"
+    },
+    "presionsmin": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventarios"
+    },
+    "presionsmax": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventarios2s"
+    },
+    "presions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventariosID"
+    }
+  }
+}

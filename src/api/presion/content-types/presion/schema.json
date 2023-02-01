@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "presions",
+  "info": {
+    "singularName": "presion",
+    "pluralName": "presions",
+    "displayName": "presion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "min": {
+      "type": "biginteger",
+      "required": true
+    },
+    "max": {
+      "type": "biginteger"
+    },
+    "inventarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario.inventario",
+      "mappedBy": "presionsmin"
+    },
+    "inventarios2s": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario.inventario",
+      "mappedBy": "presionsmax"
+    },
+    "inventariosID": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario.inventario",
+      "mappedBy": "presions"
+    },
+    "inventario_cutters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario-cutter.inventario-cutter",
+      "mappedBy": "presionsmax"
+    },
+    "inventario_cutter_selves": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario-cutter-self.inventario-cutter-self",
+      "mappedBy": "presionsmin"
+    }
+  }
+}

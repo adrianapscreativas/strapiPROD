@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tubos",
+  "info": {
+    "singularName": "tubo",
+    "pluralName": "tubos",
+    "displayName": "tubo"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "diametro_tubo": {
+      "type": "string",
+      "required": true
+    },
+    "inventarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario.inventario",
+      "mappedBy": "tubos"
+    },
+    "inventario_cutters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario-cutter.inventario-cutter",
+      "mappedBy": "tubos"
+    },
+    "inventario_cutter_selves": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario-cutter-self.inventario-cutter-self",
+      "mappedBy": "tubos"
+    }
+  }
+}

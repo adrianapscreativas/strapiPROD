@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventario_cutters",
+  "info": {
+    "singularName": "inventario-cutter",
+    "pluralName": "inventario-cutters",
+    "displayName": "inventario-cutter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cantidad": {
+      "type": "string",
+      "required": true
+    },
+    "herramientas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::herramienta.herramienta",
+      "inversedBy": "inventario_cutters"
+    },
+    "tecnologias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tecnologia.tecnologia",
+      "inversedBy": "inventario_cutters"
+    },
+    "tubos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tubo.tubo",
+      "inversedBy": "inventario_cutters"
+    },
+    "presions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventario_cutters"
+    },
+    "presionsmin": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventario_cutters"
+    },
+    "presionsmax": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventario_cutters"
+    }
+  }
+}

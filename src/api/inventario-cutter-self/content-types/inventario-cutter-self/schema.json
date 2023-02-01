@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventario_cutter_selves",
+  "info": {
+    "singularName": "inventario-cutter-self",
+    "pluralName": "inventario-cutter-selves",
+    "displayName": "inventario-cutter-self",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cantidad": {
+      "type": "string",
+      "required": true
+    },
+    "herramientas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::herramienta.herramienta",
+      "inversedBy": "inventario_cutter_selves"
+    },
+    "tecnologias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tecnologia.tecnologia",
+      "inversedBy": "inventario_cutter_selves"
+    },
+    "tubos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tubo.tubo",
+      "inversedBy": "inventario_cutter_selves"
+    },
+    "presions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventario_cutter_selves"
+    },
+    "presionsmins": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventario_cutter_selves"
+    },
+    "presionsmin": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::presion.presion",
+      "inversedBy": "inventario_cutter_selves"
+    }
+  }
+}

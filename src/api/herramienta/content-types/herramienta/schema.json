@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "herramientas",
+  "info": {
+    "singularName": "herramienta",
+    "pluralName": "herramientas",
+    "displayName": "herramienta"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "inventarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario.inventario",
+      "mappedBy": "herramientas"
+    },
+    "inventario_cutters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario-cutter.inventario-cutter",
+      "mappedBy": "herramientas"
+    },
+    "inventario_cutter_selves": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventario-cutter-self.inventario-cutter-self",
+      "mappedBy": "herramientas"
+    }
+  }
+}
